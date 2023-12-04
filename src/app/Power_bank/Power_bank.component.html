@@ -1,0 +1,30 @@
+<div class="card" id="card-proudect">
+  <h1 class="text-center" id="Helmet">Power bank</h1>
+  <div class="row">
+    <div class="col-md-6 py-6 py-md-0" *ngFor="let i of paginatedPower_bank">
+      <div class="card">
+        <img [src]="i.src" style="width: 250px; height: 200px;">
+        <div class="card-body">
+          <h3 class="text-center">{{ i.name }}</h3>
+          <p class="text-center">Lorem ipsum dolor sit amet .</p>
+          <div class="star text-center">
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+          </div>
+          <h2>{{ i.prix }} <span><li class="fa-solid fa-cart-shopping"></li></span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ajouter les boutons de pagination -->
+  <div class="text-center mt-3">
+    <button class="btn btn-secondary" *ngFor="let page of createNumberArray()" (click)="setPage(page)"  [class.page-number-active]="isPageActive(page)">
+      {{ page }}
+    </button>
+
+  </div>
+</div>
